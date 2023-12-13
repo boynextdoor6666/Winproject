@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VinlanSagaWiki</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<style>
+    body {
+        background: linear-gradient(to bottom left ,#104BA9 , #F0E68C);
+    }
+    nav {
+        background-color: black;
+    }
+    li {
+        text-align: center;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+    <a class="navbar-brand" href="#"><img
+            src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/81rPC0owmrL.jpg"
+            alt="" width="40"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav ">
+            <li class="nav-item active ">
+                <a class="nav-link text-light " href="/">Plot <span class="sr-only">(текущая)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">Characters</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/premieres/">Chat</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">Interesting Facts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/create-review/">Places</a>
+            </li>
+        </ul>
+        <form action="{% url 'search' %}" role="search" method="GET" class="form-inline ml-auto">
+            <input class="form-control mr-sm-2" type="text" name="q" type="search" placeholder="Search"
+                   aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">🔍</button>
+        </form>
+    </div>
+</nav>
+<br>

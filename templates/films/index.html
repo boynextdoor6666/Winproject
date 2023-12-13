@@ -1,0 +1,54 @@
+{% include 'header_and_footer/header.html' %}
+
+<div class="container my-5 mt-4">
+  <h2>Everything about your favourite series</h2>
+  <p>Мы рады приветствовать вас и представить наши услуги.</p>
+
+ <h1 class="mt-4">Афиша киносеансов</h1>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Фильм</th>
+                <th>Время</th>
+                <th>Зал</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in afisha_list %}
+            <tr>
+                <td>{{i.film}}</td>
+                <td>{{i.time}}</td>
+                <td>Зал {{i.area}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<!--Слайдеры-->
+<h2 class="mt-4 text-center">Популярные фильмы</h2>
+ <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {% for slide in slider_list %}
+        <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+        {% endfor %}
+    </ol>
+    <div class="carousel-inner">
+        {% for slide in slider_list %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %} text-center">
+            <img src="{{ slide.slide }}" alt="">
+            <div class="carousel-caption">
+                <h3></h3>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+{% include 'header_and_footer/footer.html' %}
